@@ -19,6 +19,7 @@
   "homepage": "https://github.com/pizzafritta/tech-test#readme",
   "dependencies": {
     "hapi": "^16.4.3",
-    "inert": "^4.2.0"
+    "inert": "^4.2.0",
+    "qs": "^6.4.0"
   }
 }

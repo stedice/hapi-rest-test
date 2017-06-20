@@ -8,10 +8,23 @@ server.connection({ port: 8000, host: 'localhost' });
 
 server.route({
     method: 'POST',
-    path: '/save',
+    path: '/',
     handler: function (request, reply) {
-        reply('Hello, world!');
-        console.log(request.payload);
+
+        const qs = require('qs');
+        const obj = qs.parse(request.payload);
+        const jsonData = JSON.stringify(obj, null, '\t');
+        console.log(jsonData);
+
+        const fs = require('fs');
+		fs.writeFile('data.json', jsonData, 'utf8', function (err) {
+    		if (err) 
+        		return console.log(err);
+    			console.log('File saved successfully');
+		});
+
+		reply(jsonData);
+
     }
 });
 
@@ -24,7 +37,7 @@ server.register(require('inert'), (err) => {
 
     server.route({
         method: 'GET',
-        path: '/form',
+        path: '/',
         handler: function (request, reply) {
             reply.file('./markup.html');
         }
