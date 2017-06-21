@@ -18,4 +18,4 @@ module.exports = {
     'getUsers': function(request, reply) {
         reply(myModel.getFromFile());
     }
-};
+}

@@ -2,10 +2,10 @@
 
 const Hapi = require('hapi');
 const myRoutes = require('./routes');
-
+const Config = require('./config').get(process.env.NODE_ENV);
 
 const server = new Hapi.Server();
-server.connection({ port: 8000, host: 'localhost' });
+server.connection({ port: Config.port, host: Config.host});
 
 server.register(require('inert'), (err) => {
 

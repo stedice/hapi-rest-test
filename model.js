@@ -19,4 +19,4 @@ module.exports = {
         console.log('Retrieve data from file')
         return JSON.parse(fs.readFileSync(fileName, 'utf8'));
     }
-};
+}

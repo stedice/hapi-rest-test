@@ -4,8 +4,8 @@
   "description": "## Introduction",
   "main": "server.js",
   "scripts": {
-    "test": "mocha --timeout 10000",
-    "start": "node server.js"
+    "test": "NODE_ENV=development mocha --timeout 10000",
+    "start": "NODE_ENV=development node server.js"
   },
   "repository": {
     "type": "git",

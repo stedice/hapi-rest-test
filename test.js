@@ -2,7 +2,8 @@
 
 const chai = require('chai');
 const chaiHttp = require('chai-http');
-const server = 'http://localhost:8000'
+const Config = require('./config').get(process.env.NODE_ENV);
+const server = Config.host + ':' + Config.port;
 const should = chai.should();
 
 chai.use(chaiHttp);
@@ -29,6 +30,15 @@ describe('Users', function() {
       			res.should.have.status(200);
       			res.should.be.json;
       			res.body.should.be.a('object');
+      		  done();
+    	});
+	});
+	it('should return error if no payload on /users POST', function(done) {
+  		chai.request(server)
+    		.post('/users')
+    		.send()
+    		.end((err, res) => {
+      			res.should.not.have.status(200);
       		  done();
     	});
 	});
