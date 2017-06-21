@@ -7,6 +7,7 @@ module.exports = {
         reply.file('./markup.html');
     },
     'saveUsers': function(request, reply) {
+        console.log(request.payload);
         const qs = require('qs'); // A querystring parser with nesting support
         const obj = qs.parse(request.payload);
 

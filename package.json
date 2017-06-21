@@ -4,7 +4,7 @@
   "description": "## Introduction",
   "main": "server.js",
   "scripts": {
-    "test": "node test.js",
+    "test": "mocha --timeout 10000",
     "start": "node server.js"
   },
   "repository": {
@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/pizzafritta/tech-test#readme",
   "dependencies": {
+    "chai": "*",
+    "mocha": "*",
+    "chai-http": "^3.0.0",
     "hapi": "^16.4.3",
     "inert": "^4.2.0",
     "qs": "^6.4.0"
