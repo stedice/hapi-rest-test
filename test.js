@@ -29,7 +29,7 @@ describe('Users', function() {
       			res.should.have.status(200);
       			res.should.be.json;
       			res.body.should.be.a('object');
-      		done();
+      		  done();
     	});
 	});
 	it('should list ALL users on /users GET', function(done) {

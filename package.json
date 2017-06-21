@@ -19,10 +19,11 @@
   "homepage": "https://github.com/pizzafritta/tech-test#readme",
   "dependencies": {
     "chai": "*",
-    "mocha": "*",
     "chai-http": "^3.0.0",
     "hapi": "^16.4.3",
     "inert": "^4.2.0",
+    "joi": "^10.6.0",
+    "mocha": "*",
     "qs": "^6.4.0"
   }
 }

@@ -1,6 +1,7 @@
 'use strict';
 
-var myController = require('./controller');
+const myController = require('./controller');
+const Joi = require('joi');
 
 module.exports = function(){
     return [
@@ -15,8 +16,15 @@ module.exports = function(){
         {
             method: 'POST',
             path: '/users',
+
             config: {
-                handler: myController.saveUsers,
+                handler: myController.saveUsers,            
+                validate : {
+                    payload : {
+                        'people[][firstname]' : Joi.array().items(Joi.string().min(1).max(100).allow('')),
+                        'people[][surname]' : Joi.array().items(Joi.string().min(2).max(100).allow(''))
+                    }
+                },
                 description: 'Submit users'
             }
         },

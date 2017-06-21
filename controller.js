@@ -1,6 +1,6 @@
 'use strict';
 
-var myModel = require('./model');
+const myModel = require('./model');
 
 module.exports = {
     'getForm': function(request, reply) {
