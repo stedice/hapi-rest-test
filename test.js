@@ -42,6 +42,15 @@ describe('Users', function() {
       		  done();
     	});
 	});
+	it('should return error if data is not valid on /users POST', function(done) {
+  		chai.request(server)
+    		.post('/users')
+    		.send('a:b')
+    		.end((err, res) => {
+      			res.should.not.have.status(200);
+      		  done();
+    	});
+	});
 	it('should list ALL users on /users GET', function(done) {
   		chai.request(server)
     		.get('/users')
